@@ -1,8 +1,8 @@
-# expressapitemplate
+# ExpressJS API Template
 
-This is a API template for ExpressJS
+This is an API template for ExpressJS
 
-## Technologies used:
+## Technologies used
 
 - NodeJS
 - ExpressJS
