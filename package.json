@@ -1,0 +1,26 @@
+{
+  "name": "expressapitemplate",
+  "version": "1.0.0",
+  "description": "This is a Bolier Plate Template for an API built on the ExpressJS Framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donniecode1983/expressapitemplate.git"
+  },
+  "keywords": [
+    "expressjs",
+    "template"
+  ],
+  "author": "Donovan J Murphy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/donniecode1983/expressapitemplate/issues"
+  },
+  "homepage": "https://github.com/donniecode1983/expressapitemplate#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
