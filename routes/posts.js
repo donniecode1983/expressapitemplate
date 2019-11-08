@@ -16,6 +16,10 @@ router.get('/specfic', (req, res) => {
     res.send('We are on specfic!');
 });
 
+router.post('/', (req, res) => {
+    console.log(req.body);
+});
+
 // Export the Router
 
 module.exports = router;
