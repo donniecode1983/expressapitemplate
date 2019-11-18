@@ -8,15 +8,22 @@ const router = express.Router();
 const Post = require('../models/Post');
 
 // Build Routes
-router.get('/', (req, res) => {
-    res.send('We are on posts!');
+
+// This route gets all Posts
+router.get('/', async (req, res) => {
+    // res.send('We are on posts!');
+    try {
+        const posts = await Post.find();
+        res.json(posts);
+
+    } catch (err) {
+        res.json({ message: err });
+    }
 });
 
-router.get('/specfic', (req, res) => {
-    res.send('We are on specfic!');
-});
 
-router.post('/', (req, res) => {
+// This roue submits a Post
+router.post('/', async (req, res) => {
     // console.log(req.body);
     const post = new Post({
         title: req.body.title,
@@ -34,7 +41,7 @@ router.post('/', (req, res) => {
 
 
     try {
-        const savedPost = post.save();
+        const savedPost = await post.save();
         res.json(savedPost);
 
     } catch (err) {
