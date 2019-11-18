@@ -31,15 +31,6 @@ router.post('/', async (req, res) => {
         author: req.body.author
     });
 
-    // post.save()
-    // .then(data => {
-    //     res.json(data);
-    // })
-    // .catch(err => {
-    //     res.json({ message: err });
-    // });
-
-
     try {
         const savedPost = await post.save();
         res.json(savedPost);
@@ -48,6 +39,40 @@ router.post('/', async (req, res) => {
         res.json({ message: err });
     }
 
+});
+
+// This route gets a specfic post
+router.get('/:postId', async (req, res) => {
+
+    try {
+        const post = await Post.findById(req.params.postId);
+        res.json(post);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
+// This route will delete a specfic post
+router.delete('/:postId', async (req, res) => {
+    try {
+        const removedPost = await Post.remove({ _id: req.params.postId });
+        res.json(removedPost);
+
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
+// This route will update a specfic post
+router.patch('/:postId', async (req, res) => {
+    try {
+        const updatePost = await Post.updateOne(
+            { _id: req.params.postId }, 
+            {$set: {title: req.body.title }});
+        res.json(updatePost);
+    } catch (err) {
+        res.json({ message: err });
+    }
 });
 
 // Export the Router
